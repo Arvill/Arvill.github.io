@@ -1,2 +1,38 @@
+<!DOCTYPE html>
+<html>
 <link rel="stylesheet" type="text/css" href="gotSomeStyle.css" media="screen" />
-<h1>Testing2</h1>
+<body style="margin: 0;">
+
+    <video autoplay muted>
+        <source src="anim.mp4" type="video/mp4">
+    </video>
+    <div id="text-container" style="visibility: hidden"></div>
+</body>
+<script type="text/javascript">
+    function show(){
+        document.getElementById("text-container").style.visibility = "visible";
+    }
+    function tmr() {
+        const txt = Array.from("\nHello there. \nWelcome to my website! \nSomeday I will clean up the animation and code\n... (someday)\nIn the meanwhile enjoy this page :)\nI should probably post something useful here\n... someday");
+        iterator(0,txt,txt.length);
+
+    }
+    function iterator(i,txt,maxi){
+        if(i>=maxi){
+            return;
+        }
+        setTimeout(writeChar, (i * 100), txt[i]);
+        iterator(i+1,txt,maxi);
+    }
+    function writeChar(c){
+        if(c == "\n") {
+            document.getElementById("text-container").insertAdjacentHTML("beforeend", "<br/>");
+            document.getElementById("text-container").insertAdjacentText("beforeend", ">Tor@webpage: /home$ ");
+        }else {
+            document.getElementById("text-container").insertAdjacentText("beforeend", c);
+        }
+    }
+    setTimeout(show, 4000);
+    setTimeout(tmr, 4100);
+</script>
+</html>
