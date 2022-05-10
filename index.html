@@ -13,7 +13,7 @@
         document.getElementById("text-container").style.visibility = "visible";
     }
     function tmr() {
-        const txt = Array.from("\nHello there. \nWelcome to my website! \nSomeday I will clean up the animation and code\n... (someday)\nIn the meanwhile enjoy this page :)\nI should probably post something useful here\n... someday");
+        const txt = Array.from("\nHello there. \nWelcome to my website! \nSomeday I will clean up the animation\n... (someday)\nIn the meanwhile enjoy this page :)\nI should probably post something useful\n... someday");
         iterator(0,txt,txt.length);
 
     }
@@ -26,8 +26,7 @@
     }
     function writeChar(c){
         if(c == "\n") {
-            document.getElementById("text-container").insertAdjacentHTML("beforeend", "<br/>");
-            document.getElementById("text-container").insertAdjacentText("beforeend", ">Tor@webpage: /home$ ");
+            document.getElementById("text-container").insertAdjacentHTML("beforeend", "<br/> <span>Tor@webpage: <span style='color: red; display: inline'> /home$</span> </span>");
         }else {
             document.getElementById("text-container").insertAdjacentText("beforeend", c);
         }
